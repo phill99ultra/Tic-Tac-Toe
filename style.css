@@ -1,0 +1,73 @@
+#game-title{
+  display: block;
+  margin-bottom: 30px;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+}
+#map{
+    width: 450px;
+    height: 450px;
+    position: absolute;
+    left: 36.5%;
+    }
+  #map .cell{
+    width: 148px;
+    height: 148px;
+    line-height: 148px;
+    border: 1px solid #464646;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+    font-size: 36px;
+    transition: all linear .3s;
+  }
+  #map .cell:hover{
+    background-color: #ccc;
+  }
+  #map .cell:nth-child(1),
+  #map .cell:nth-child(2),
+  #map .cell:nth-child(3){
+  border-top: 0;
+  }
+  #map .cell:nth-child(1),
+  #map .cell:nth-child(4),
+  #map .cell:nth-child(7){
+    border-left: 0;
+  }
+  #map .cell:nth-child(3),
+  #map .cell:nth-child(6),
+  #map .cell:nth-child(9){
+    border-right: 0;
+  }
+  #map .cell:nth-child(7),
+  #map .cell:nth-child(8),
+  #map .cell:nth-child(9){
+  border-bottom: 0;
+  }
+  #endgame{
+  display: none;
+  width: 250px;
+  height: 120px;
+  background-color: rgba(205, 133, 63, .8 );
+  position: absolute;
+  top: 28%;
+  left: 43.5%;
+  color: white;
+  line-height: 3.3em;
+  font-size: 2em;
+  border-radius: 5px;
+  text-align: center;
+  
+  }
+  #reset_game{
+    display: block;
+    margin: 500px auto;
+    border: 1px solid #000;
+    border-radius: 20px;
+    background-color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 2rem;
+    outline: none;
+  }
