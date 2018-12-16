@@ -26,10 +26,9 @@ var data_O = [];
   var setValue = function(r, c){
     //alert(r + " - " +c);
     //console.log(r + " - " +c);
-    
     if(map[r][c] == ''){  //de acest if este nevoie ca sa nu se rescrie celula ce deja are valoarea X sau O
     map[r][c] = curentPlayer; //din primul click atribuim ca valoarea celulei devine X(variabila globala sus declarata)
-    (map[r][c] === 'X') ? data_X.push(map[r][c]) : data_O.push(map[r][c]);
+    //(map[r][c] === 'X') ? data_X.push(map[r][c]) : data_O.push(map[r][c]);
     changePlayer(); //functie cu care schimbam jucatorul care face pasul
     stepCount++;  //dupa fiecare click creste numarul de pasi
     showMap();
@@ -80,15 +79,24 @@ for(r = 0; r < 3; r++){   //verificam variantele din rinduri
      map[r][1] == map[r][2] &&
      map[r][0] !== ''
   ){
-    alert();
-  }
+        if(map[r][0] == 'X'){
+        endGame.style.display = "block";
+        endGame.innerHTML = "The winner is X";
+        removeClick(r,c) 
+      } else if(map[r][0] == 'O'){
+        endGame.style.display = "block";
+        endGame.innerHTML = "The winner is O";
+      } else{
+        return false;
+      }
+   }
 }
 for(c = 0; c < 3; c++){   //verificam variantele din coloane
   if(map[0][c] == map[1][c] &&
      map[1][c] == map[2][c] &&
      map[0][c] !== ''
     ){
-      alert();
+      alert(map[0][c]);;
    }
 }
 //diagonala stinga-dreapta
@@ -96,14 +104,18 @@ for(c = 0; c < 3; c++){   //verificam variantele din coloane
      map[0][0] == map[2][2] &&
      map[0][0] !== ''
     ){
-      alert();
+      alert(map[0][0]);;
    }
 //diagonala dreapta-stinga   
    if(map[0][2] == map[1][1] &&
     map[0][2] == map[2][0] &&
     map[0][2] !== ''
    ){
-    alert();
+    alert(map[0][2]);;
   }
   return false;
+}
+var removeClick = function(){
+  var block = document.getElementsByClassName('cell');
+  block.removeEventListener('click', setValue);
 }
