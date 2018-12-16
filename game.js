@@ -82,7 +82,7 @@ for(r = 0; r < 3; r++){   //verificam variantele din rinduri
         if(map[r][0] == 'X'){
         endGame.style.display = "block";
         endGame.innerHTML = "The winner is X";
-        removeClick(r,c) 
+        removeClick() 
       } else if(map[r][0] == 'O'){
         endGame.style.display = "block";
         endGame.innerHTML = "The winner is O";
