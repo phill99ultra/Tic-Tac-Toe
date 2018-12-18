@@ -77,7 +77,7 @@ var stopGame = function(message) {
 
 var removeOnclikfromCells = function() {
   var div_map = document.getElementById('map');
-  var cells_onclick_events = div_map.querySelectorAll('[onclick]');
+  var cells_onclick_events = div_map.querySelectorAll('div.cell');
   for (var i = 0; i < cells_onclick_events.length; i++) {
     cells_onclick_events[i].removeAttribute('onclick');
   }
