@@ -28,13 +28,12 @@ var reset = document.getElementById('reset_game');
     changePlayer(); 
     stepCount++;  
     showMap();
-    /* (stepCount === 9) ? ((endGame.innerHTML = 'DRAW!') && (endGame.style.display = "block")):
-                        (message.innerHTML = "It's " + curentPlayer + " 's turn."); */
-    } else{  
+      } else{  
         endGame.innerHTML = 'Pick another cell!';
         endGame.style.display = "block";
       }
-    checkGame()
+    saveMap();  
+    checkGame();
 }
 
 
@@ -121,3 +120,7 @@ for(c = 0; c < 3; c++){
   }
   return winner;
 }
+
+var  saveMap = function(){
+  localStorage.setItem('save_game', JSON.stringify(map));
+  }
